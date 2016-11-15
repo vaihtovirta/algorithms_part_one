@@ -3,7 +3,6 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 public class Percolation {
   private int sideSize;
   private WeightedQuickUnionUF grid, bottomlessGrid;
-  private int sitesSize;
   private boolean[] states;
 
   public Percolation(int n) {
@@ -12,7 +11,7 @@ public class Percolation {
     }
 
     sideSize = n;
-    sitesSize = sideSize * sideSize;
+    int sitesSize = sideSize * sideSize;
     grid = new WeightedQuickUnionUF(sitesSize + 2);
     bottomlessGrid = new WeightedQuickUnionUF(sitesSize + 1);
     states = new boolean[sitesSize + 2];
